@@ -1,14 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace Bai_thi.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace Bai_thi.Entities;
+
+public partial class Subject
 {
-    [Table("subjects")]
-    public class Subject
-    {
-        [Key]
-        public int id { get; set; }
-        [Required]
-        [StringLength(255)]
-        public string name { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public virtual ICollection<AddNewPage> AddNewPages { get; set; } = new List<AddNewPage>();
 }

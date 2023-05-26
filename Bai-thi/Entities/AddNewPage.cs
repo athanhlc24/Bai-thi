@@ -1,26 +1,31 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace Bai_thi.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace Bai_thi.Entities;
+
+public partial class AddNewPage
 {
-    [Table("add_new_pages")]
-    public class AddNewPage
-    {
-        [Key]
-        public int id { get; set; }
+    public int Id { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string name { get; set; }
+    public string Name { get; set; } = null!;
 
-        [Required]
-        public DateTime start_time { get; set; }
+    public TimeSpan StartTime { get; set; }
 
-        [Required]
-        public DateTime exam_date { get; set; }
+    public DateTime ExamDate { get; set; }
 
-        [Required]
-        public string exam_duration { get; set; }
+    public int ExamDuration { get; set; }
 
-      
-    }
+    public int? ClassRoomId { get; set; }
+
+    public int? SubjectsId { get; set; }
+
+    public int? FacultiesId { get; set; }
+
+    public string? Status { get; set; }
+
+    public virtual ClassRoom? ClassRoom { get; set; }
+
+    public virtual Faculty? Faculties { get; set; }
+
+    public virtual Subject? Subjects { get; set; }
 }

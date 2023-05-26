@@ -1,15 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace Bai_thi.Entities
-{
-    [Table("class_rooms")]
-    public class ClassRoom
-    {
-        [Key]
-        public int id { get; set; }
+﻿using System;
+using System.Collections.Generic;
 
-        [Required]
-        [StringLength(255)]
-        public string name { get; set; }
-    }
+namespace Bai_thi.Entities;
+
+public partial class ClassRoom
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public virtual ICollection<AddNewPage> AddNewPages { get; set; } = new List<AddNewPage>();
 }
