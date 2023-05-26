@@ -42,10 +42,6 @@ public partial class ThiDotNetContext : DbContext
                 .HasColumnName("exam_date");
             entity.Property(e => e.ExamDuration).HasColumnName("exam_duration");
             entity.Property(e => e.FacultiesId).HasColumnName("faculties_id");
-            entity.Property(e => e.Name)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("name");
             entity.Property(e => e.StartTime).HasColumnName("start_time");
             entity.Property(e => e.Status)
                 .HasMaxLength(255)
@@ -73,10 +69,6 @@ public partial class ThiDotNetContext : DbContext
             entity.ToTable("class_rooms");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Name)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("name");
         });
 
         modelBuilder.Entity<Faculty>(entity =>
@@ -86,10 +78,6 @@ public partial class ThiDotNetContext : DbContext
             entity.ToTable("faculties");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Name)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("name");
         });
 
         modelBuilder.Entity<Subject>(entity =>
@@ -99,10 +87,6 @@ public partial class ThiDotNetContext : DbContext
             entity.ToTable("subjects");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Name)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("name");
         });
 
         OnModelCreatingPartial(modelBuilder);

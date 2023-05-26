@@ -7,8 +7,6 @@ public partial class AddNewPage
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = null!;
-
     public TimeSpan StartTime { get; set; }
 
     public DateTime ExamDate { get; set; }
